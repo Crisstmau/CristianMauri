@@ -273,3 +273,148 @@ margin-left: 120px;
 #icons span{
     margin-right: 15px;
 }
+#form {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  input[type="button"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #555;
+  }
+  
+  #form {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e74c3c; /* Red border for input */
+  }
+  
+  input[type="button"] {
+    background-color: #e74c3c; /* Red background color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+
+  /* Table styles */
+  #base table {
+    margin-left: 400px;
+    border-collapse: collapse;
+  }
+  
+  #base th, #base td {
+    border: 1px solid #e74c3c; /* Red border for table cells */
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #base th {
+    background-color: #f2f2f2;
+  }
+  
+  #base button {
+    background-color: #e74c3c; /* Red background color */
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  
+  #base button.edit {
+    background-color: #c0392b; /* Darker red for edit button */
+  }
+  
+  #base button.delete {
+    background-color: #e74c3c; /* Red for delete button */
+  }
+  #form{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    width: 300px;
+    padding: 20px; 
+  border: 2px solid #e74c3c; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  color: #333; 
+  transition: border-color 0.3s ease
+  }
+  #form:hover{
+    border-color: #c0392b;
+  }
+ 
+  #form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+  }
+  @keyframes spark {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+#thb{
+    width: 150px;
+}
+#nombrest{
+ width: 150px;
+}
+#but{
+  margin-right: 10px;
+}
+#base{
+  margin-left: 10px;
+}
+
+  

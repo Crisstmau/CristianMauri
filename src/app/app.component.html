@@ -1,6 +1,6 @@
 <header>
   <div class="sup_header">
-      <h1 id="carnet"><span>Primer</span>Parcial</h1>
+      <h1 id="carnet"><span>Segundo</span>Parcial</h1>
       <div class="buttons">        
           <button id="Search">
               <span>SEARCH</span>
@@ -23,6 +23,63 @@
       <button id="p2">Haz clic aquí</button>
   </div>
 </section>
+<div id="form">
+  <form *ngIf="!isEditing">
+    <label>Nombres</label><br>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="ingrese un dato"><br>
+
+    <label>Abrev:</label><br>
+    <input type="text" [(ngModel)]="abrev" name="abrev" placeholder="ingrese su abreviacion"><br>
+
+    <input type="button" value="Enviar" (click)="save()">
+  </form>
+
+  <form *ngIf="isEditing">
+    <label>Nombres</label><br>
+    <input type="text" [(ngModel)]="editRow.name" name="name" placeholder="ingrese un dato act"><br>
+
+    <label>Abrev:</label><br>
+    <input type="text" [(ngModel)]="editRow.abrev" name="abrev" placeholder="ingrese su act"><br>
+
+    <input type="button" value="Guardar" (click)="guardar()">
+    <input type="button" value="Cancelar" (click)="cancelarEdicion()">
+  </form>
+
+</div>
+<div id="base">
+  <table border="1" id="tabla">
+      <thead>
+        <tr>
+          <th id="nombrest">Nro</th>
+          <th  id="nombrest">Abrev.</th>
+          <th  id="nombrest">Nombre</th>
+          <th  id="nombrest">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of dataSource; index as nro">
+          <td>{{nro + 1}}</td>
+          <td>
+            {{!isEditing || row.id !== editRow?.id ? row.abrev : ''}}
+          </td>
+          <td>
+            {{!isEditing || row.id !== editRow?.id ? row.name : ''}}
+          </td>
+          <td>
+            <ng-container *ngIf="!isEditing || row.id !== editRow?.id; else editMode">
+              <button class="action-button" (click)="actualizar(row.id)" id="but">Editar</button>
+              <button class="action-button" (click)="borrar(row.id)"id="but">Eliminar</button>
+            </ng-container>
+            <ng-template #editMode>
+              <button class="action-button" (click)="guardar()"id="but">Guardar</button>
+              <button class="action-button" (click)="cancelarEdicion()"id="but">Cancelar</button>
+            </ng-template>
+          </td>
+        </tr>
+      </tbody>
+ </table>
+</div>
+
 <h1 id="texto3">History of javascript</h1>
 <p id="texto3">JavaScript, formerly known as Mocha and later modified to LiveScript, was developed by Brendan Eich in 1995
   for Netscape<br>
