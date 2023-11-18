@@ -327,11 +327,11 @@ margin-left: 120px;
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    border: 1px solid #e74c3c; /* Red border for input */
+    border: 1px solid #e74c3c; 
   }
   
   input[type="button"] {
-    background-color: #e74c3c; /* Red background color */
+    background-color: #e74c3c; 
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -339,7 +339,7 @@ margin-left: 120px;
   }
   
   input[type="button"]:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #c0392b; 
   }
 
   /* Table styles */
@@ -349,7 +349,7 @@ margin-left: 120px;
   }
   
   #base th, #base td {
-    border: 1px solid #e74c3c; /* Red border for table cells */
+    border: 1px solid #e74c3c;
     padding: 8px;
     text-align: center;
   }
@@ -359,7 +359,7 @@ margin-left: 120px;
   }
   
   #base button {
-    background-color: #e74c3c; /* Red background color */
+    background-color: #e74c3c;
     color: #fff;
     border: none;
     padding: 6px 10px;
@@ -367,11 +367,11 @@ margin-left: 120px;
   }
   
   #base button.edit {
-    background-color: #c0392b; /* Darker red for edit button */
+    background-color: #c0392b; 
   }
   
   #base button.delete {
-    background-color: #e74c3c; /* Red for delete button */
+    background-color: #e74c3c; 
   }
   #form{
     margin: auto;

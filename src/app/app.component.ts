@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
     })
   }
   actualizar(id: string) {
-    let aux = confirm("Esta Seguro de Actualizar");
+    let aux = confirm("quiere actualizar");
     if (!aux) return;
     this.isEditing = true;
     this.editRow = { ...this.dataSource.find((item: { id: string; }) => item.id === id) };
