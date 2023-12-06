@@ -1,0 +1,399 @@
+<app-header></app-header>
+  <section class="img">
+    <div>
+        <h1>Cristian Mauricio Ortega Blasquez</h1>
+        <p>Laboratorios javascript</p>
+        <button id="p2">Haz clic aquí</button>
+    </div>
+  </section>
+  <div id="form">
+    <form *ngIf="!isEditing">
+      <label>Nombres</label><br>
+      <input type="text" [(ngModel)]="name" name="name" placeholder="ingrese un dato"><br>
+  
+      <label>Abrev:</label><br>
+      <input type="text" [(ngModel)]="abrev" name="abrev" placeholder="ingrese su abreviacion"><br>
+  
+      <input type="button" value="Enviar" (click)="save()">
+    </form>
+  
+    <form *ngIf="isEditing">
+      <label>Nombres</label><br>
+      <input type="text" [(ngModel)]="editRow.name" name="name" placeholder="ingrese un dato act"><br>
+  
+      <label>Abrev:</label><br>
+      <input type="text" [(ngModel)]="editRow.abrev" name="abrev" placeholder="ingrese su act"><br>
+  
+      <input type="button" value="Guardar" (click)="guardar()">
+      <input type="button" value="Cancelar" (click)="cancelarEdicion()">
+    </form>
+  
+  </div>
+  <div id="base">
+    <table border="1" id="tabla">
+        <thead>
+          <tr>
+            <th id="nombrest">Nro</th>
+            <th  id="nombrest">Abrev.</th>
+            <th  id="nombrest">Nombre</th>
+            <th  id="nombrest">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of dataSource; index as nro">
+            <td>{{nro + 1}}</td>
+            <td>
+              {{!isEditing || row.id !== editRow?.id ? row.abrev : ''}}
+            </td>
+            <td>
+              {{!isEditing || row.id !== editRow?.id ? row.name : ''}}
+            </td>
+            <td>
+              <ng-container *ngIf="!isEditing || row.id !== editRow?.id; else editMode">
+                <button class="action-button" (click)="actualizar(row.id)" id="but">Editar</button>
+                <button class="action-button" (click)="borrar(row.id)"id="but">Eliminar</button>
+              </ng-container>
+              <ng-template #editMode>
+                <button class="action-button" (click)="guardar()"id="but">Guardar</button>
+                <button class="action-button" (click)="cancelarEdicion()"id="but">Cancelar</button>
+              </ng-template>
+            </td>
+          </tr>
+        </tbody>
+   </table>
+  </div>
+  
+  <h1 id="texto3">History of javascript</h1>
+  <p id="texto3">JavaScript, formerly known as Mocha and later modified to LiveScript, was developed by Brendan Eich in 1995
+    for Netscape<br>
+    It was created to be used on the client-side of websites, enabling the addition of dynamic and interactive
+    components to static HTML texts
+    <br> JavaScript has been an ECMA standard since 1997, and Mozilla started Firefox development using
+    JavaScript
+  </p>
+  <section class="conteiner">
+    <div class="card">
+        <div class="front">
+            <img src='../assets/images/mau6.webp' alt="" id="im">
+            <h1>laboratorio 1</h1>
+        </div>
+        <div class="back">
+            <pre>
+            <code>
+  let nombre1 = "Maxwell Wright";
+  let telefono1 = "(0191) 719 6495";
+  let email1 = "Curabitur.egestas.nunc@nonummyac.co.uk";
+  
+  let nombre2 = "Raja Villarreal";
+  let telefono2 = "0866 398 2895";
+  let email2 = "posuere.vulputate@sed.com";
+  
+  let nombre3 = "Helen Richards";
+  let telefono3 = "0800 1111";
+  let email3 = "libero@convallis.edu";
+  
+  console.log("Primer contacto:");
+  console.log(nombre1);
+  console.log(telefono1);
+  console.log(email1);
+  
+  console.log("\nÚltimo contacto:");
+  console.log(nombre3);
+  console.log(telefono3);
+  console.log(email3);
+            </code>
+        </pre>
+           
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src='../assets/images/mau5.avif' alt="" id="im">
+            <h1>laboratorio 2</h1>     
+        </div>
+        <div class="back">
+            <pre>
+            <code>
+  let contactosf =
+  nombre: "Maxwell Wright",
+  telefono: "(0191) 719 6495",
+  email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+  , 
+  nombre: "Raja Villarreal",
+  telefono: "0866 398 2895",
+  email: "posuere.vulputate@sed.com"
+  , 
+  nombre: "Helen Richards",
+  telefono: "0800 1111",
+  email: "libero@convallis.edu"
+  ,
+  nombre: "Maisie Haley",
+  telefono: "0913 531 3030",
+  email: "risus.Quisque@urna.ca."
+  ;
+  
+            </code>
+        </pre>
+           
+        </div>
+    </div>
+  </section>
+  <div class="d9">
+  <h1>laboratorio 3</h1>
+  <pre>
+  <code>
+  let contactosf = 
+  nombre: "Maxwell Wright",
+  telefono: "(0191) 719 6495",
+  email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+  , 
+  nombre: "Raja Villarreal",
+  telefono: "0866 398 2895",
+  email: "posuere.vulputate@sed.com"
+  ,
+  nombre: "Helen Richards",
+  telefono: "0800 1111",
+  email: "libero@convallis.edu"
+  ;          
+  let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+  let nuevotel = prompt("Ingrese el teléfono del nuevo contacto:");
+  let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+  
+  let newContacts = 
+  nombre: nuevoNombre,
+  telefono: nuevotel,
+  email: nuevoEmail
+  ;
+  
+  contactosf.push(newContacts);
+  
+  let last = contactosf.length - 1;
+  
+  console.log($contactosf[0].nombre / $contactosf[0].telefono / $contactosf[0].email);
+  console.log($contactosf[last].nombre / $contactosf[last].telefono / $contactosf[last].email);
+  </code>
+  </pre>
+  </div>
+  <div class="d9" id="lab4">
+  <h1>laboratorio 4</h1>
+  <pre>
+    <code>
+  let contactosf = 
+  nombre: "Maxwell Wright",
+  telefono: "(0191) 719 6495",
+  email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+  , 
+  nombre: "Raja Villarreal",
+  telefono: "0866 398 2895",
+  email: "posuere.vulputate@sed.com"
+  , 
+  nombre: "Helen Richards",
+  telefono: "0800 1111",
+  email: "libero@convallis.edu"
+  ;    
+  let x = prompt("1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Agregar un nuevo contacto");
+  
+  if (x === "1")
+  console.log("Primer contacto:");
+  console.log($contactosf[0].nombre / $contactosf[0].telefono / $contactosf[0].email);
+  else if (x === "2") 
+  console.log("Último contacto:");
+  let last = contactosf.length - 1;
+  console.log($contactosf[last].nombre / $contactosf[last].telefono / $contactosf[last].email);
+   else if (x === "3") 
+  let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+  let nuevotel = prompt("Ingrese el teléfono del nuevo contacto:");
+  let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+  
+  if (nuevoNombre && nuevotel && nuevoEmail) 
+    let nuevoContacto = 
+        nombre: nuevoNombre,
+        telefono: nuevotel,
+        email: nuevoEmail
+    ;
+  
+    contactosf.push(newContacts);
+    console.log("Nuevo contacto agregado exitosamente.");
+   else 
+    console.log("Error: Debes ingresar nombre, teléfono y correo electrónico para agregar un nuevo contacto.");
+  
+   else
+  console.log("Opción inválida. Por favor, elige una opción válida (1, 2 o 3).");
+  
+        </code>
+    </pre>
+    </div>
+    
+    <div class="d8" id="lab5">
+        <h1>laboratorio 5</h1>
+        <pre>
+            <code>
+  let op;
+  
+  while (op !== "quit") 
+  op = prompt("¿Qué deseas hacer?\n1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. 
+  Mostrar todos los contactos\n4. Agregar un nuevo contacto\n5. Exit");
+  
+  switch (op) 
+  case "1":
+    console.log("Primer contacto:");
+    console.log("Nombre: " + contacts[0].name);
+    console.log("Teléfono: " + contacts[0].phone);
+    console.log("Correo electrónico: " + contacts[0].email);
+    break;
+  case "2":
+    console.log("Último contacto:");
+    console.log("Nombre: " + contacts[contacts.length - 1].name);
+    console.log("Teléfono: " + contacts[contacts.length - 1].phone);
+    console.log("Correo electrónico: " + contacts[contacts.length - 1].email);
+    break;
+  case "3":
+    console.log("Todos los contactos:");
+    for (let i = 0; i  contacts.length; i++) 
+        console.log("Nombre: " + contacts[i].name);
+        console.log("Teléfono: " + contacts[i].phone);
+        console.log("Correo electrónico: " + contacts[i].email);
+        console.log("-----------------------");
+    break;
+  case "4":
+    let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+    let nuevoTelefono = prompt("Ingrese el teléfono del nuevo contacto:");
+    let nuevoCorreo = prompt("Ingrese el correo electrónico del nuevo contacto:");
+  
+    if (nuevoNombre && nuevoTelefono && nuevoCorreo) 
+        let nuevoContacto = 
+            name: nuevoNombre,
+            phone: nuevoTelefono,
+            email: nuevoCorreo
+        ;
+        contacts.push(nuevoContacto);
+        console.log("Nuevo contacto agregado exitosamente.");
+    else 
+        console.log("Error: Debes ingresar nombre, teléfono y correo electrónico para agregar un nuevo contacto.");
+    
+    break;
+  case "5":
+    op = "quit";
+    console.log("Saliendo del programa...");
+    break;
+  default:
+    console.log("Opción inválida. Por favor, elige una opción válida.");
+                </code>
+            </pre>
+            </div>
+            
+            <div class="d9" id="d51">
+                <h1>laboratorio 6</h1>
+                <pre>
+                    <code>
+  let contactosf = 
+  nombre: "Maxwell Wright",
+  telefono: "(0191) 719 6495",
+  email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+  , 
+  nombre: "Raja Villarreal",
+  telefono: "0866 398 2895",
+  email: "posuere.vulputate@sed.com"
+  ,
+  nombre: "Helen Richards",
+  telefono: "0800 1111",
+  email: "libero@convallis.edu"
+  ;
+  
+  let x;
+  
+  while (x !== "quit") 
+  x = prompt("1. Mostrar contacto en cualquier posicion\n2. Mostrar el último contacto\n3. Mostrar todos los contactos\n4. Agregar un nuevo\n5. Ordenar contactos\n6. Exit");
+  
+  switch (x)
+  case "1":
+    console.log("Mostrar contacto:");
+    let mostrarcontactoindice = prompt("Ingrese la posición del contacto:");
+    let mostrarpocision = parseInt(mostrarcontactoindice);
+    mostrarcontact(contactosf, mostrarpocision);
+    break;
+  case "2":
+    console.log("Último contacto:");
+    let mostrarUltimoc = contactosf.length - 1;
+    console.log(`$contactosf[mostrarUltimoc].nombre / $contactosf[mostrarUltimoc].telefono / $contactosf[mostrarUltimoc].email`);
+    break;
+  case "3":
+    console.log("Todos los contactos:");
+    mostrartodos(contactosf);
+    break;
+  case "4":
+    let nuevoNombre = prompt("Ingrese el nombre del nuevo contacto:");
+    let nuevotel = prompt("Ingrese el teléfono del nuevo contacto:");
+    let nuevoEmail = prompt("Ingrese el correo electrónico del nuevo contacto:");
+    anadirnuevo(contactosf, nuevoNombre, nuevotel, nuevoEmail);
+    break;
+  case "5":
+    let opcionOrden = prompt("Selecciona cómo quieres ordenar los contactos:\n1. Por nombre\n2. Por teléfono\n3. Por correo electrónico");
+    switch (opcionOrden) 
+        case "1":
+            ordenarcontactos("nombre");
+            console.log("ordenados por nombre:");
+            mostrartodos(contactosf);
+            break;
+        case "2":
+            ordenarcontactos("telefono");
+            console.log("ordenados por teléfono:");
+            mostrartodos(contactosf);
+            break;
+        case "3":
+            ordenarcontactos("email");
+            console.log("ordenados por correo electrónico:");
+            mostrartodos(contactosf);
+            break;
+        default:
+            console.log("coloque una de las opciones.");
+    break;
+  case "6":
+    x = "quit";
+    console.log("exit");
+    break;
+  default:
+    console.log("Opción inválida.Elige una opción válida.");
+  function mostrarcontact(contactosf, i) 
+  if (contactosf instanceof Array && i >= 0 && i  contactosf.length) 
+  console.log(`$contactosf[i].nombre / $contactosf[i].telefono / $contactosf[i].email`);
+   else 
+  console.log("Error: Índice de contacto inválido.");
+  
+  function mostrartodos(contactosf) 
+  if (contactosf instanceof Array) 
+  for (let i = 0; i  contactosf.length; i++) 
+    console.log(`$contactosf[i].nombre / $contactosf[i].telefono / $contactosf[i].email`);
+   else
+  console.log("Error: La lista de contactos es inválida.");
+  
+  function anadirnuevo(contactosf, nombre, telefono, email) 
+  if (contactosf instanceof Array && nombre && telefono && email) 
+  let nuevoContacto = 
+    nombre: nombre,
+    telefono: telefono,
+    email: email
+  ;
+  contactosf.push(nuevoContacto);
+  console.log("Nuevo contacto agregado.");
+   else 
+  console.log("Debes ingresar nombre, teléfono y correo electrónico para agregar un nuevo contacto.");
+  
+                    </code>
+                </pre>
+                </div>  
+  <footer>
+    <section class="foote">
+        <div id="d1">
+            <p>tecnologias emergentes <br> ci:13229394 &nbsp; nombre: Cristian Mauricio Ortega Blasquez</p>
+        </div>
+        <div id="icons">
+            <span id="ic1"><i class="fa-brands fa-facebook fa-bounce fa-lg" style="color: #005eff;"></i></span>
+            <span id="ic2"><i class="fa-brands fa-square-twitter fa-bounce fa-lg"
+                    style="color: #1068fe;"></i></span>
+            <span id="ic3"><i class="fa-brands fa-vimeo fa-bounce fa-lg" style="color: #00b3ff;"></i></span>
+            <span id="ic4"><i class="fa-brands fa-youtube fa-bounce fa-lg"
+                    style="color: #e60000;"></i></span>
+        </div>
+    </section>
+  </footer>

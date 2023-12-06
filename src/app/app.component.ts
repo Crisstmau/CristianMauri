@@ -8,6 +8,9 @@ import { LanguagesService } from './services/languages.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   name:string = "";
   abrev:string = "";
   dataSource:any = [];
