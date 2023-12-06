@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LanguagesService {
 
-  url: string = "https://apis-525d6-default-rtdb.firebaseio.com/";
+  url: string = "https://apis-525d6-default-rtdb.firebaseio.com/users"; // Modify this line
 
   constructor(private http: HttpClient) { }
 
@@ -32,5 +32,5 @@ export class LanguagesService {
   {
     let uptUrl = this.url + "/" + id + ".json"
     return this.http.put(uptUrl,body)
-}
+  }
 }

@@ -1,2 +1,49 @@
+#re1 {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff; /* Puedes cambiar este color si lo deseas */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: #ff0000; /* Color rojo para el encabezado */
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ff0000; /* Color rojo para el botón */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #cc0000; /* Cambia el color al pasar el ratón sobre el botón */
+}
+#re1{
+    margin-top: 50px;
+}
   

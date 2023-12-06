@@ -11,18 +11,18 @@
       <label>Nombres</label><br>
       <input type="text" [(ngModel)]="name" name="name" placeholder="ingrese un dato"><br>
   
-      <label>Abrev:</label><br>
-      <input type="text" [(ngModel)]="abrev" name="abrev" placeholder="ingrese su abreviacion"><br>
+      <label>apellidos:</label><br>
+      <input type="text" [(ngModel)]="apellido" name="abrev" placeholder="ingrese su abreviacion"><br>
   
       <input type="button" value="Enviar" (click)="save()">
     </form>
   
-    <form *ngIf="isEditing">
+    <form *ngIf="isEditing">  
       <label>Nombres</label><br>
-      <input type="text" [(ngModel)]="editRow.name" name="name" placeholder="ingrese un dato act"><br>
+      <input type="text" [(ngModel)]="editRow.nombre" name="nombre" placeholder="ingrese un dato act"><br>
   
       <label>Abrev:</label><br>
-      <input type="text" [(ngModel)]="editRow.abrev" name="abrev" placeholder="ingrese su act"><br>
+      <input type="text" [(ngModel)]="editRow.apellido" name="apellido" placeholder="ingrese su act"><br>
   
       <input type="button" value="Guardar" (click)="guardar()">
       <input type="button" value="Cancelar" (click)="cancelarEdicion()">
@@ -43,10 +43,10 @@
           <tr *ngFor="let row of dataSource; index as nro">
             <td>{{nro + 1}}</td>
             <td>
-              {{!isEditing || row.id !== editRow?.id ? row.abrev : ''}}
+              {{!isEditing || row.id !== editRow?.id ? row.apellido : ''}}
             </td>
             <td>
-              {{!isEditing || row.id !== editRow?.id ? row.name : ''}}
+              {{!isEditing || row.id !== editRow?.id ? row.nombre : ''}}
             </td>
             <td>
               <ng-container *ngIf="!isEditing || row.id !== editRow?.id; else editMode">

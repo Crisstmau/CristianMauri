@@ -1,10 +1,15 @@
 <app-header></app-header>
-<p>register works!</p>
+<div id="re1">
 <form>
     <h1>Registrar</h1>
+    <label>Nombres</label><br>
+      <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="ingrese su nombre"><br>
+      <label>apellido</label><br>
+      <input type="text" [(ngModel)]="apellido" name="apellido" placeholder="ingrese su apellido"><br>
     <label>email</label>
-    <input type="text" [(ngModel)]="email" name="email">
+    <input type="text" [(ngModel)]="email" name="email" placeholder="ingrese su email">
     <label>pass</label>
-    <input type="password" [(ngModel)]="pass" name="pass">    
+    <input type="password" [(ngModel)]="pass" name="pass" placeholder="ingrese su contraseña">    
     <button (click)="guardar()">Guardar</button>
 </form>    
+</div>

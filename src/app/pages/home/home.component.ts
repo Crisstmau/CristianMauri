@@ -9,7 +9,7 @@ import { LanguagesService } from 'src/app/services/languages.service';
 export class HomeComponent implements OnInit {
   
   name: string = "";
-  abrev: string = "";
+  apellido: string = "";
   dataSource: any = [];
 
   isEditing = false;
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   save() {
     let body = {
       name: this.name,
-      abrev: this.abrev
+      apellido: this.apellido
     };
     this.language.postLanguage(body).subscribe((data) => {
       if (data != null) {
